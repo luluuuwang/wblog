@@ -130,3 +130,8 @@ go run main.go
 如果项目对您有帮助，打赏个鸡腿吃呗！  
 <img src="https://raw.githubusercontent.com/wangsongyan/wblog/master/screenshots/alipay.png" width = 40% height = 40% />
 <img src="https://raw.githubusercontent.com/wangsongyan/wblog/master/screenshots/weixin.png" width = 40% height = 40% />
+
+
+// 运行方法：
+go build -o wblog
+./wblog

@@ -1,1 +1,72 @@
-domain = 'http://blog.wangsy.me'
+addr = ':8090'
+signup_enabled = true
+title = 'Wblog'
+session_secret = 'wblog'
+domain = '[!!]'
+file_server = 'smms'
+notify_emails = ''
+page_size = 10
+public = 'static'
+view = 'views/**/*'
+
+[database]
+dialect = 'sqlite'
+dsn = 'wblog.db?_loc=Asia/Shanghai'
+
+[seo]
+description = 'Wblog,talk about golang,java and so on.'
+
+[seo.author]
+name = 'wangsy'
+email = 'wangsy0129@qq.com'
+
+[qiniu]
+enabled = false
+accesskey = ''
+secretkey = ''
+fileserver = ''
+bucket = 'wblog'
+
+[smms]
+enabled = false
+apiurl = 'https://sm.ms/api/v2/upload'
+apikey = ''
+
+[github]
+enabled = false
+clientid = ''
+clientsecret = ''
+redirecturl = 'https://example.com/oauth2callback'
+authurl = 'https://github.com/login/oauth/authorize?client_id=%s&scope=user:email&state=%s'
+tokenurl = 'https://github.com/login/oauth/access_token'
+scope = ''
+
+[smtp]
+enabled = false
+username = ''
+password = ''
+host = 'smtp.163.com:25'
+
+[[navigators]]
+title = 'Posts'
+url = '/index'
+target = ''
+
+[[navigators]]
+title = 'AboutMe'
+url = '/page/6'
+target = ''
+
+[[navigators]]
+title = 'RSS'
+url = '/rss'
+target = '_blank'
+
+[[navigators]]
+title = 'Subscribe'
+url = '/subscribe'
+target = ''
+
+[backup]
+enabled = false
+backup_key = ''
