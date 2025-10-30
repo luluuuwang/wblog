@@ -140,7 +140,7 @@ func UnSubscribe(c *gin.Context) {
 	}
 	subscriber.SubscribeState = false
 	err = subscriber.Update()
-	if err == nil {
+	if err != nil {
 		HandleMessage(c, fmt.Sprintf("Unscribe failed.%s", err.Error()))
 		return
 	}

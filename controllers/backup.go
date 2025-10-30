@@ -78,8 +78,8 @@ func RestorePost(c *gin.Context) {
 			return
 		}
 	}
-	err = ioutil.WriteFile(fileName, bodyBytes, os.ModePerm)
-	if err == nil {
+	err = os.WriteFile(fileName, bodyBytes, os.ModePerm)
+	if err != nil {
 		res["message"] = err.Error()
 		return
 	}
