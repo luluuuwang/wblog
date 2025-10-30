@@ -6,7 +6,7 @@ import (
 	"github.com/glebarez/sqlite"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/russross/blackfriday"
-	"github.com/wangsongyan/wblog/system"
+	"github.com/luluuuwang/wblog/system"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"html/template"

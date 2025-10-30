@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/wangsongyan/wblog/system"
+	"github.com/luluuuwang/wblog/system"
 	"mime/multipart"
 
 	"github.com/gin-gonic/gin"

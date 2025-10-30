@@ -5,8 +5,8 @@ import (
 	"github.com/dchest/captcha"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
-	"github.com/wangsongyan/wblog/models"
-	"github.com/wangsongyan/wblog/system"
+	"github.com/luluuuwang/wblog/models"
+	"github.com/luluuuwang/wblog/system"
 )
 
 func CommentPost(c *gin.Context) {

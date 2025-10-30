@@ -6,8 +6,8 @@ import (
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
-	"github.com/wangsongyan/wblog/helpers"
-	"github.com/wangsongyan/wblog/system"
+	"github.com/luluuuwang/wblog/helpers"
+	"github.com/luluuuwang/wblog/system"
 )
 
 func AuthGet(c *gin.Context) {

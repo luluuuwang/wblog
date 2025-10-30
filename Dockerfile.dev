@@ -1,0 +1,12 @@
+# Dev image for wblog (supports CGO for sqlite3)
+FROM golang:1.22-bookworm
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential ca-certificates tzdata \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app/wblog
+ENV CGO_ENABLED=1 TZ=Asia/Shanghai
+
+# 默认：拉依赖并启动，读取 conf/conf.toml & seelog.xml
+CMD ["bash","-lc","go mod download && go run main.go -C conf/conf.toml -L conf/seelog.xml"]

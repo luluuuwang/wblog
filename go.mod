@@ -1,4 +1,4 @@
-module github.com/wangsongyan/wblog
+module github.com/luluuuwang/wblog
 
 go 1.22.0
 

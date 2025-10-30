@@ -3,8 +3,8 @@ package controllers
 import (
 	"github.com/cihub/seelog"
 	"github.com/gin-gonic/gin"
-	"github.com/wangsongyan/wblog/models"
-	"github.com/wangsongyan/wblog/system"
+	"github.com/luluuuwang/wblog/models"
+	"github.com/luluuuwang/wblog/system"
 	"net/http"
 )
 
