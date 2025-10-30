@@ -3,7 +3,6 @@ package system
 import (
 	"fmt"
 	"github.com/pelletier/go-toml/v2"
-	"io/ioutil"
 	"os"
 )
 
@@ -159,7 +158,7 @@ func defaultConfig() Configuration {
 }
 
 func LoadConfiguration(path string) error {
-	data, err := ioutil.ReadFile(path)
+	data, err := os.ReadFile(path)  // data是
 	if err != nil {
 		return err
 	}

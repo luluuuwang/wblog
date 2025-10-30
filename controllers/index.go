@@ -62,7 +62,7 @@ func IndexGet(c *gin.Context) {
 }
 
 func AdminIndex(c *gin.Context) {
-	c.HTML(http.StatusOK, "admin/index.html", gin.H{
+	c.HTML(http.StatusOK, "admin/index.html", gin.H{ // Gin的服务器端渲染SSR
 		"pageCount":    models.CountPage(),
 		"postCount":    models.CountPost(),
 		"tagCount":     models.CountTag(),

@@ -46,7 +46,7 @@ func PostCreate(c *gin.Context) {
 	isPublished := c.PostForm("isPublished")
 	published := "on" == isPublished
 
-	post := &models.Post{
+	post := &models.Post{  // 写数据库
 		Title:       title,
 		Body:        body,
 		IsPublished: published,

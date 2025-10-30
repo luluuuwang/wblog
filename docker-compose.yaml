@@ -1,0 +1,43 @@
+services:
+  mysql:
+    image: mysql:8.0
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p123456"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: wblog
+      TZ: Asia/Shanghai
+    command: ["--character-set-server=utf8mb4",
+              "--collation-server=utf8mb4_unicode_ci",
+              "--sql-mode=NO_ENGINE_SUBSTITUTION"]   # 关键：去掉 STRICT*
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  wblog:
+    image: golang:1.22-bookworm
+    container_name: wblog-app
+    working_dir: /app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./:/app
+      - ./conf.mysql.toml:/app/conf/conf.toml:ro
+    environment:
+      - TZ=Asia/Shanghai
+      - GOPROXY=https://goproxy.cn,https://proxy.golang.org,direct
+      - GOSUMDB=sum.golang.org
+    command: >
+      bash -lc "/usr/local/go/bin/go build -mod=vendor -buildvcs=false -o /app/wblog-app &&
+                /app/wblog-app -C conf/conf.toml -L conf/seelog.xml"
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

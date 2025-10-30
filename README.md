@@ -133,5 +133,9 @@ go run main.go
 
 
 // 运行方法：
+本地：
 go build -o wblog
 ./wblog
+Docker：
+docker compose up -d
+docker logs -f wblog-app

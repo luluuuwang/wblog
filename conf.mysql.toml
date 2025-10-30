@@ -1,0 +1,57 @@
+addr = ':8090'
+signup_enabled = true
+title = 'Wblog'
+session_secret = 'wblog'
+domain = '[!!]'
+file_server = 'smms'
+notify_emails = ''
+page_size = 10
+public = 'static'
+view   = 'views/**/*'
+
+[database]
+dialect = 'mysql'
+dsn = 'root:123456@tcp(mysql:3306)/wblog?charset=utf8mb4&parseTime=True&loc=Local'
+
+[seo]
+keywords = 'wblog,blog,golang'
+description = 'Personal blog powered by Go'
+
+[qiniu]
+domain = ''
+bucket = ''
+access_key = ''
+secret_key = ''
+
+[smms]
+token = ''
+
+[github]
+client_id = ''
+client_secret = ''
+
+[smtp]
+host = 'smtp.qq.com'
+port = 25
+user = ''
+pass = ''
+reply_to = ''
+
+[[navigators]]
+title = 'Home'
+url = '/'
+target = ''
+
+[[navigators]]
+title = 'RSS'
+url = '/rss'
+target = '_blank'
+
+[[navigators]]
+title = 'Subscribe'
+url = '/subscribe'
+target = ''
+
+[backup]
+enabled = false
+backup_key = ''
